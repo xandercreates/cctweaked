@@ -1,6 +1,7 @@
 local monitor = peripheral.wrap("right")
 monitor.setCursorPos(1, 1)
-local inspect = turtle.inspect()
-monitor.write(inspect)
+local has_block, data = turtle.inspect()
 
-print("verified testing attempt 3")
+if has_block then
+    monitor.write(textutils.serialise(data))
+end
