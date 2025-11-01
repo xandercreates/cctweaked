@@ -1,7 +1,7 @@
 local buttons = {}
 buttons.__index = {}
 buttons.instances = {}
-function buttons.newButton(self, name, type, initval)
+function buttons.newButton(self, name, type, initval, size, pos)
     local self = setmetatable({}, buttons)
     local randomize = tostring(math.randomseed(math.random(),math.random()))
     self.id = name..(string.sub(randomize, 1, 8))
@@ -14,4 +14,11 @@ function buttons.newButton(self, name, type, initval)
     return self
 end
 
+local testbutton = buttons:newButton("test", "TOGGLE", false)
+local printTable = function(tbl)
+    for _, v in pairs(tbl) do
+        print(v)
+    end
+end
+printTable(testbutton)
 return buttons
