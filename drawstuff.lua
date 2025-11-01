@@ -37,6 +37,12 @@ local location = {
     "center"
 }
 
+local pages = {
+
+}
+
+local monitor = peripheral.find("monitor")
+term.redirect(monitor)
 
 local desktop = paintutils.loadImage("backgr.nfp")
 --#endregion
