@@ -8,6 +8,13 @@ local box = paintutils.drawFilledBox
 local line = paintutils.drawLine
 local init = false
 local mon = peripheral.find("monitor")
+term.redirect(mon)
+local size = {
+    x = select(1, term.getSize()),
+    [1] = select(1, term.getSize()),
+    y = select(2, term.getSize()),
+    [2] = select(2, term.getSize())
+}
 --#endregion
 
 --#region Funcs
@@ -17,6 +24,7 @@ local mon = peripheral.find("monitor")
 --#region Loop
 while init == false do
     print("Initialized.")
+    print(size)
     if not init then
         init = true
         break
