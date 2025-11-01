@@ -19,16 +19,16 @@ local function drawMenu()
     box(5,5,7,2, colors.blue)
 end
 function main()
+    term.redirect(mon)
     drawMenu()
 end
 --#endregion
 
 --#region Loop
 while init == false do
-    drawMenu()
+    main()
     if not init then
         init = true
-        os.exit()
         break
     end
 end
